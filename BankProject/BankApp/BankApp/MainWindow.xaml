@@ -1,0 +1,59 @@
+﻿<Window x:Class="BankApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <Grid Margin="0,0,0,-21">
+        <Grid x:Name="gridUpdateCustomer" Margin="10,0,0,22" Height="360" VerticalAlignment="Bottom">
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="182" Margin="294,7,0,0" Stroke="Black" VerticalAlignment="Top" Width="274"/>
+            <TextBox x:Name="txtNewFirstName" HorizontalAlignment="Left" Height="22" Margin="371,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtNewLastName" HorizontalAlignment="Left" Height="24" Margin="371,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="btnUpdateCustomer" Content="Update Name" HorizontalAlignment="Left" Margin="377,144,0,0" VerticalAlignment="Top" Width="114" Click="UpdateCustomerName_Click"/>
+            <Button x:Name="btnBackFromUpdateCustomer" Content="Back" HorizontalAlignment="Left" Margin="452,-36,0,0" VerticalAlignment="Top" Width="116" Click="btnMenuNavigation_Click"/>
+            <Label x:Name="lblChangeFirstName" Content="First Name&#xA;" HorizontalAlignment="Left" Margin="368,41,0,0" VerticalAlignment="Top" Height="26"/>
+            <Label x:Name="label_Copy" Content="Last Name&#xA;" HorizontalAlignment="Left" Margin="369,84,0,0" VerticalAlignment="Top" Height="26"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="182" Margin="4,7,0,0" Stroke="Black" VerticalAlignment="Top" Width="274"/>
+            <ComboBox x:Name="cmbBoxAccounts" HorizontalAlignment="Left" Margin="74,29,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbBoxAccount_SelectionChanged"/>
+            <Label x:Name="lblAccounts1" Content="Accounts" HorizontalAlignment="Left" Margin="104,5,0,0" VerticalAlignment="Top"/>
+            <ListBox x:Name="listBAccountsTransactions" HorizontalAlignment="Left" Height="125" Margin="20,56,0,0" VerticalAlignment="Top" Width="239"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="139" Margin="4,206,0,0" Stroke="Black" VerticalAlignment="Top" Width="274"/>
+            <TextBox x:Name="txtAmount" HorizontalAlignment="Left" Height="23" Margin="74,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lblAmount" Content="Amount&#xA;" Margin="104,229,393,0" VerticalAlignment="Top" Height="26"/>
+            <Button x:Name="btnWithdraw" Content="Withdraw" HorizontalAlignment="Left" Margin="141,290,0,0" VerticalAlignment="Top" Width="75" Click="btnWithdraw_Click"/>
+            <Button x:Name="btnDeposit" Content="Deposit" HorizontalAlignment="Left" Margin="48,290,0,0" VerticalAlignment="Top" Width="75" Click="btnDeposit_Click"/>
+            <Button x:Name="btnPrintTransactions" Content="Print Transactions" HorizontalAlignment="Left" Margin="88,315,0,0" VerticalAlignment="Top" Width="101" Click="btnMenuNavigation_Click" IsEnabled="False"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="139" Margin="294,206,0,0" Stroke="Black" VerticalAlignment="Top" Width="274"/>
+            <Button x:Name="btnAddSavingsAccount" Content="New Savings Account" HorizontalAlignment="Left" Margin="368,230,0,0" VerticalAlignment="Top" Width="128" Height="22" Click="btnAddAccount_Click"/>
+            <Button x:Name="btnAddCreditAccount" Content="New Credit Account" HorizontalAlignment="Left" Margin="368,258,0,0" VerticalAlignment="Top" Width="128" Click="btnAddAccount_Click"/>
+            <Button x:Name="btnRemoveAccount" Content="Remove Account" HorizontalAlignment="Left" Margin="368,304,0,0" VerticalAlignment="Top" Width="128" Click="btnRemoveAccount_Click"/>
+            <Label x:Name="label" Content="Change Customer Name" HorizontalAlignment="Left" Margin="363,17,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Label x:Name="lblSelectedCustomer" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18.667" Margin="213,23,202,0" Width="177" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lblWelcome" Content="Welcome To HerpyBank" HorizontalAlignment="Left" Margin="199,5,0,0" VerticalAlignment="Top" FontSize="18.667" Height="40" Width="237"/>
+        <Grid x:Name="gridMainPage" Margin="10,58,0,10" HorizontalAlignment="Left" Width="565">
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="170" Margin="2,-2,0,0" Stroke="Black" VerticalAlignment="Top" Width="276"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="175" Margin="2,175,0,0" Stroke="Black" VerticalAlignment="Top" Width="276"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="170" Margin="291,-2,-2,0" Stroke="Black" VerticalAlignment="Top" Width="276"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="175" Margin="291,175,-2,0" Stroke="Black" VerticalAlignment="Top" Width="276"/>
+            <Button x:Name="btnPrintCustList" Content="Print Customers" HorizontalAlignment="Left" Margin="376,18,0,0" VerticalAlignment="Top" Width="112" Height="25" Click="btnMenuNavigation_Click"/>
+            <ListBox x:Name="listBCustomers" HorizontalAlignment="Left" Height="131" Margin="10,29,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="listCustomers_SelectionChanged"/>
+            <Button x:Name="btnEditCustomerPage" Content="Manage Customer" HorizontalAlignment="Left" Margin="376,95,0,0" VerticalAlignment="Top" Width="112" Height="23" Click="btnMenuNavigation_Click"/>
+            <Button x:Name="btnRemoveCustomer" Content="Remove Customer" HorizontalAlignment="Left" Margin="376,56,0,0" VerticalAlignment="Top" Width="112" Height="26" Click="RemoveCustomer_Click"/>
+            <Label x:Name="lblCustomers" Content="Customers" HorizontalAlignment="Left" Margin="110,-2,0,0" VerticalAlignment="Top"/>
+            <ListBox x:Name="listBRemovedCustomerInfo" Margin="10,199,0,0" HorizontalAlignment="Left" Width="260" Height="145" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" Margin="365,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" SelectionOpacity="-1"/>
+            <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="365,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132"/>
+            <TextBox x:Name="txtCustomerSSN" HorizontalAlignment="Left" Height="23" Margin="365,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" SelectionOpacity="1"/>
+            <Button x:Name="btnApproveNewCustomer" Content="OK" HorizontalAlignment="Left" Margin="390,324,0,0" VerticalAlignment="Top" Width="76" Click="btnAddNewCustomer_Click"/>
+            <Label x:Name="lblFirstName" Content="First Name&#xA;" HorizontalAlignment="Left" Margin="364,195,0,0" VerticalAlignment="Top" Height="23"/>
+            <Label x:Name="lblSSN" Content="Social Security Number&#xA;" HorizontalAlignment="Left" Margin="363,274,0,0" VerticalAlignment="Top" Height="28"/>
+            <Label x:Name="lblAddNewCustomer" Content="Add A New Customer&#xA;" HorizontalAlignment="Left" Margin="363,173,0,161" Width="172" FontSize="13.333"/>
+            <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="364,233,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblRemoveAccountInfo" Content="Account Information" HorizontalAlignment="Left" Margin="80,175,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btnDeselectCustomer" Content="Deselect Customer" HorizontalAlignment="Left" Margin="376,131,0,0" VerticalAlignment="Top" Width="112" Height="23" Click="btnUnselectCustomer_Click"/>
+        </Grid>
+    </Grid>
+</Window>
